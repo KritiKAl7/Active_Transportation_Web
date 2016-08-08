@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="description" content="Demonstrates the use of Google Cloud Database with a Firebase DB">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<body>
+		
+		<form method="POST">
+			User ID: <input type="text" name="userid"><br>
+			<div id="dynamicInput">
+          	Child 1 name:<br><input type="text" name="myInputs[]">
+          	School: 
+          	<select>
+  			<option value="HMC">HMC</option>
+  			<option value="CMC">CMC</option>
+  			<option value="SCP">SCP</option>
+  			<option value="POM">POM</option>
+  			<option value="PIT">PIT</option>
+			</select>
+     		</div>
+     		<input type="button" value="Add Child" onClick="addInput('dynamicInput');">
+		</form>
+
+		<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+		<script>
+  		// Initialize Firebase
+  		var config = {
+    		apiKey: "hidden",
+    		authDomain: "popping-inferno-8538.firebaseapp.com",
+    		atabaseURL: "https://popping-inferno-8538.firebaseio.com",
+    		storageBucket: "popping-inferno-8538.appspot.com",
+  		};
+  		firebase.initializeApp(config);
+		</script>
+		<script src="addkid.js" language="Javascript" type="text/javascript"></script>
+
+	</body>
+</head>
+</html>
