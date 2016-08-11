@@ -185,6 +185,7 @@ def updateDatabase(registeredUsers, firebase):
 		userData["contactInfo"] = user["phone"]
 		userData["address"] = user["address"]
 		userData["isStaff"] = False
+		userData["passwordChanged"] = False
 		try:
 			db.child("users").child(user["uID"]).set(userData)
 		except Exception, e:
